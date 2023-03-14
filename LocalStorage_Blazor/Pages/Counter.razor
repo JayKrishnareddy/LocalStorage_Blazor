@@ -1,0 +1,27 @@
+﻿@page "/counter"
+
+@inject ILocalStorageService _localstorage;
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+        _localstorage.SetItemAsync("currentCount", currentCount);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var count = await _localstorage.GetItemAsStringAsync("currentCount");
+    }
+
+}
