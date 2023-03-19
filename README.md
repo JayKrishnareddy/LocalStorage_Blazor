@@ -1,6 +1,6 @@
-### Using Localstorage to Cache Data in Blazor Applications
+#Using Localstorage to Cache Data in Blazor Applications
 
-####Topics Covered
+###Topics Covered
 
 - What is Local Storage
 - Using Local Storage in Blazor
